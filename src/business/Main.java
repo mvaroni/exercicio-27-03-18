@@ -23,7 +23,7 @@ import persistence.*;
 public class Main {
 
     //Pesquisar como criar um arq texto num desktop qualquer
-    private static final String FILENAME = "C:\\Users\\14202122\\Desktop\\logClients.txt";
+    private static final String FILENAME = "C:\\temp\\logClients.txt";
     private static List<Cliente> checked_in_list = new ArrayList<>();
     public static Scanner terminal = new Scanner(System.in);
     
@@ -167,14 +167,15 @@ public class Main {
     
     public static void write_in_log() {
         BufferedWriter writer = null;
+        String logPath="Log saved in ";
         
         try {
             
             File logFile = new File(FILENAME);
             
-            System.out.println(logFile.getCanonicalPath());
+            logPath += logFile.getCanonicalPath();
             
-            writer = new BufferedWriter(new FileWriter(logFile, true));
+            writer = new BufferedWriter(new FileWriter(logFile, true));                  
             for(int x=0; x < checked_in_list.size(); x++){
                 writer.write(checked_in_list.get(x).toString());
                 writer.newLine();
@@ -191,6 +192,8 @@ public class Main {
                 ex.printStackTrace();
             }
         }
+        
+        System.out.println(logPath);
     } 
     
     public static void verify_client_passage(Cliente cli){
