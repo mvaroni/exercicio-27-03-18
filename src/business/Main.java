@@ -60,7 +60,7 @@ public class Main {
         int op;
         do{
             System.out.println("1 - Check-in de cliente\n" +
-            "2 - Mostrar clientes\n" +
+            "2 - Listar clientes\n" +
             "3 - Quantidade de clientes\n" +
             "4 - Pesquisar por CPF\n" +
             "5 - Distribuição por gênero\n" +

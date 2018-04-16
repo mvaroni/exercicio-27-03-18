@@ -55,7 +55,6 @@ public class Bar {
     public String percent_gender(){
         int homens = 0;
         for(int x=0; x<clientes.size(); x++){
-            System.out.println(clientes.get(x).isGenero()+"\n");
             if(clientes.get(x).isGenero()){
                 homens++;
             }
